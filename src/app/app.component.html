@@ -1,0 +1,26 @@
+
+
+<input type="checkbox" id="check" checked="true">
+<label for="check">
+  <i class="fa fa-angle-right" id="btn"></i>
+  <i class="fa fa-angle-left" id="cancel"></i>
+</label>
+<div class="sidebar">
+  <header onclick="menu()" id="userbtn" class="cabecera">
+    AgroFlor <br>
+  </header>
+  <ul class="user" id="useroptions">
+    <li><a id="conf" onclick="menuActive('conf')" routerLink="/config"><i class="fa fa-cog"></i> Configuraciones</a></li>
+  </ul>
+  <ul class="items" id="usermenu">
+    <li><a id="inicio" class="activoMenu" onclick="menuActive('inicio')" routerLink="/home"><i class="fa fa-home"></i> Inicio</a></li>
+    <li><a id="varie" onclick="menuActive('varie')" routerLink="/variedades"><i class="fa fa-angle-double-up"></i> Variedades</a></li>
+    <li><a id="regis" onclick="menuActive('regis')" routerLink="/registros"><i class="fa fa-barcode"></i> Registros</a></li>
+    <li><a id="reports" onclick="menuActive('reports')" routerLink="/reportes"><i class="fa fa-certificate"></i> Reportes</a></li>
+  </ul>
+</div>
+<div class="ing">
+</div>
+<div class="panel" id="cambio">
+  <router-outlet></router-outlet>
+</div>

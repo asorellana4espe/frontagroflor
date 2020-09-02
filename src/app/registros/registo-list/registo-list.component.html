@@ -1,0 +1,31 @@
+<style>
+    .fa{
+      display: inline-table;
+    }
+  </style>
+  <table class="table table-striped table-hover" style="text-align: center">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Variedad</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Medidas bonche</th>
+        <th scope="col">Precio exportación</th>
+        <th scope="col">Tallos nacional</th>
+        <th scope="col">Precio nacional</th>
+        <th scope="col">Total tallos</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let V of service.list">
+        <td (click)="populateForm(V)">{{ V.variedad_id }}</td>
+        <td (click)="populateForm(V)">{{ V.fecha }}</td>
+        <td (click)="populateForm(V)">{{ V.bonche_med }}</td>
+        <td (click)="populateForm(V)">{{ V.precio_tall_exp }}</td>
+        <td (click)="populateForm(V)">{{ V.tall_nacional }}</td>
+        <td (click)="populateForm(V)">{{ V.precio_nac }}</td>
+        <td (click)="populateForm(V)">{{ V.total_tallos }}</td>
+        <td><i (click)="onDelete(V.id)" class="borrar fa fa-trash"></i></td>
+      </tr>
+    </tbody>
+  </table>

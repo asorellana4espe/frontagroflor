@@ -1,0 +1,24 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="id" #medidas="ngModel" [(ngModel)]="service.formData.id" ><br>
+  <table class="table">
+    <tr>
+      <th>
+        <label class="etiqueta">Medidas:   </label>
+      </th>
+      <th style="text-align:center">
+        <input required name="medidas" #medidas="ngModel" [(ngModel)]="service.formData.medidas" >
+        <div class="error" *ngIf="medidas.invalid && medidas.touched">Este campo es requerido</div>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <label class="etiqueta">Tallos por bonche:   </label>
+      </th>
+      <th style="text-align:center">
+        <input required type="number" name="tallos_bonche" #tallos_bonche="ngModel" [(ngModel)]="service.formData.tallos_bonche" ><br>
+        <div class="error" *ngIf="tallos_bonche.invalid && tallos_bonche.touched">Este campo es requerido</div>
+      </th>
+    </tr>
+  </table>
+  <button class="submit" type="submit" [disabled]="form.invalid">Crear / Actualizar</button>
+</form>

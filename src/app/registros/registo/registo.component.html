@@ -1,0 +1,79 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id" ><br>
+  <input type="hidden" name="floricola_id" #medidas_id="ngModel" [(ngModel)]="service.formData.floricola_id" ><br>
+  <table class="table">
+    <tr>
+      <th>
+        <label class="etiqueta">Variedad:   </label>
+      </th>
+      <th style="text-align:center">
+        <input required type="number" name="variedad_id" #variedad_id="ngModel" [(ngModel)]="service.formData.variedad_id" ><br>
+        <div class="error" *ngIf="variedad_id.invalid && variedad_id.touched">Este campo es requerido</div>
+      </th>
+    </tr>
+
+    <tr>
+      <th>
+        <label class="etiqueta">Fecha:   </label>
+      </th>
+      <th style="text-align:center">
+        <input type="date" required name="fecha" #fecha="ngModel" [(ngModel)]="service.formData.fecha" >
+        <div class="error" *ngIf="fecha.invalid && fecha.touched">Este campo es requerido</div>
+      </th>
+    </tr>
+
+    <tr>
+      <th>
+        <label class="etiqueta">Medida bonche:   </label>
+      </th>
+      <th style="text-align:center">
+        <input required name="bonche_med" #bonche_med="ngModel" [(ngModel)]="service.formData.bonche_med" ><br>
+        <div class="error" *ngIf="bonche_med.invalid && bonche_med.touched">Este campo es requerido</div>
+      </th>
+    </tr>
+
+    <tr>
+      <th>
+        <label class="etiqueta">Precio exportacion:   </label>
+      </th>
+      <th style="text-align:center">
+        <input required type="number" name="precio_tall_exp" #precio_tall_exp="ngModel" [(ngModel)]="service.formData.precio_tall_exp" ><br>
+        <div class="error" *ngIf="precio_tall_exp.invalid && precio_tall_exp.touched">Este campo es requerido</div>
+      </th>
+    </tr>
+
+    <tr>
+      <th>
+        <label class="etiqueta">Tallos de nacional:   </label>
+      </th>
+      <th style="text-align:center">
+        <input required type="number" name="tall_nacional" #tall_nacional="ngModel" [(ngModel)]="service.formData.tall_nacional" ><br>
+        <div class="error" *ngIf="tall_nacional.invalid && tall_nacional.touched">Este campo es requerido</div>
+      </th>
+    </tr>
+
+    <tr>
+      <th>
+        <label class="etiqueta">Total Tallos:   </label>
+      </th>
+      <th style="text-align:center">
+        <input required type="number" name="total_tallos" #total_tallos="ngModel" [(ngModel)]="service.formData.total_tallos" ><br>
+        <div class="error" *ngIf="total_tallos.invalid && total_tallos.touched">Este campo es requerido</div>
+      </th>
+    </tr>
+
+    <tr>
+      <th>
+        <label class="etiqueta">Precio Nacional:   </label>
+      </th>
+      <th style="text-align:center">
+        <input required type="number" name="precio_nac" #precio_nac="ngModel" [(ngModel)]="service.formData.precio_nac" ><br>
+        <div class="error" *ngIf="precio_nac.invalid && precio_nac.touched">Este campo es requerido</div>
+      </th>
+    </tr>
+
+
+  </table>
+  <button class="submit" type="submit" [disabled]="form.invalid">Crear / Actualizar</button>
+</form>
+

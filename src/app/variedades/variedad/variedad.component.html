@@ -1,0 +1,25 @@
+<form #form="ngForm" (submit)="onSubmit(form)">
+    <h1 #tituloRegis style="text-align: center;">Registro de variedades</h1>
+<input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id" >
+  <table class="table">
+    <tr>
+      <th>
+        <label>Nombre:</label>
+      </th>
+      <th style="text-align:center">
+        <input required name="nombre" #nombre="ngModel" [(ngModel)]="service.formData.nombre" >
+        <div class="error" *ngIf="nombre.invalid && nombre.touched">Campo Requerido</div>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <label>N° de Matas:</label>
+      </th>
+      <th style="text-align:center">
+        <input required name="total_matas" type="number" #total_matas="ngModel" [(ngModel)]="service.formData.total_matas" >
+        <div class="error" *ngIf="total_matas.invalid && total_matas.touched">Campo Requerido</div>
+      </th>
+    </tr>
+  </table>
+  <button class="submit" type="submit" [disabled]="form.invalid">Crear / Actualizar</button>
+</form>
